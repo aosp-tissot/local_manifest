@@ -10,7 +10,7 @@ This XML file does not appear to have any style information associated with it. 
 <remote name="opengappsold" fetch="http://github.com/opengapps/"/>
 <project path="vendor/gapps-go" name="gapps-go" remote="phh" revision="master"/>
 <project path="vendor/hardware_overlay" name="sooti/vendor_hardware_overlay" remote="gh" revision="pie"/>
-<project path="device/phh/treble" name="aosp-tissot/device_phh_treble" remote="gh" revision="android-11.0"/>
+<project path="device/phh/treble" name="aosp-tissot/device_phh_treble" remote="gh" revision="android-11.0_rebase"/>
 <project path="vendor/vndk" name="vendor_vndk" remote="phh" revision="android-10.0"/>
 <project path="vendor/vndk-tests" name="vendor_vndk-tests" remote="phh" revision="master"/>
 <project path="vendor/interfaces" name="vendor_interfaces" remote="phh" revision="android-11.0"/>
