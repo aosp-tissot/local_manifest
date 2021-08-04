@@ -3,7 +3,7 @@
 set -e
 
 patches="$(readlink -f -- $1)"
-wget https://github.com/aosp-tissot/local_manifest/blob/aosp-11.0/sooti-patches.zip
+wget https://github.com/aosp-tissot/local_manifest/raw/aosp-11.0/sooti-patches.zip
 unzip sooti-patches.zip
 for project in $(cd $patches/patches; echo *) $(cd $patches/sooti-patches; echo *) ;do
         p="$(tr _ / <<<$project |sed -e 's;platform/;;g')"
