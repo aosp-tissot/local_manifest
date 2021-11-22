@@ -1,76 +1,98 @@
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-<remote name="gh" fetch="https://github.com"/>
-<remote name="phh" fetch="https://github.com/phhusson/"/>
-<remote name="caf" fetch="http://source.codeaurora.org/quic/la" review="codeaurora.org"/>
-<remote name="LineageOS" fetch="https://github.com/LineageOS/" review="https://review.lineageos.org/" revision="refs/heads/lineage-15.1"/>
-<remote name="pe" fetch="https://gitlab.com/PixelExperience/"/>
-<remote name="aosp-tissot" fetch="https://github.com/aosp-tissot/" revision="refs/heads/aosp-8.1"/>
-<remote name="tissot-gitlab" fetch="https://gitlab.com/sooti" revision="pie"/>
-<remote name="opengappsold" fetch="http://github.com/opengapps/"/>
-<project path="vendor/gapps-go" name="gapps-go" remote="phh" revision="master"/>
-<project path="vendor/hardware_overlay" name="sooti/vendor_hardware_overlay" remote="gh" revision="pie"/>
-<project path="device/phh/treble" name="aosp-tissot/device_phh_treble" remote="gh" revision="android-11.0_rebase"/>
-<project path="vendor/vndk" name="vendor_vndk" remote="phh" revision="android-10.0"/>
-<project path="vendor/vndk-tests" name="vendor_vndk-tests" remote="phh" revision="master"/>
-<project path="vendor/interfaces" name="vendor_interfaces" remote="phh" revision="android-11.0"/>
-<project path="vendor/magisk" name="vendor_magisk" remote="phh" revision="master"/>
-<!--  exfat support  -->
-<remote name="relan" fetch="https://github.com/relan/"/>
-<project path="external/exfat" name="exfat" remote="relan" revision="master"/>
-<!--  Device repos  -->
-<remove-project name="device/generic/arm64"/>
-<remove-project name="device/generic/armv7-a-neon"/>
-<remove-project name="device/generic/car"/>
-<remove-project name="device/generic/mini-emulator-arm64"/>
-<remove-project name="device/generic/mini-emulator-armv7-a-neon"/>
-<remove-project name="device/generic/mini-emulator-x86"/>
-<remove-project name="device/generic/mini-emulator-x86_64"/>
-<remove-project name="device/generic/qemu"/>
-<remove-project name="device/generic/x86"/>
-<remove-project name="device/generic/x86_64"/>
-<remove-project name="device/generic/uml"/>
-<remove-project name="device/google/cuttlefish_vmm"/>
-<remove-project name="device/google/trout"/>
-<remove-project name="device/google/fuchsia"/>
-<remove-project name="device/google/bramble"/>
-<remove-project name="device/google/cuttlefish"/>
-<remove-project name="device/google/crosshatch-sepolicy"/>
-<remove-project name="device/google/crosshatch-kernel"/>
-<remove-project name="device/google/crosshatch"/>
-<remove-project name="device/google/contexthub"/>
-<remove-project name="device/google/bonito-kernel"/>
-<remove-project name="device/google/bonito"/>
-<remove-project name="device/google/coral"/>
-<remove-project name="device/google/atv"/>
-<remove-project name="device/generic/opengl-transport"/>
-<remove-project name="device/generic/trusty"/>
-<remove-project name="device/google/bonito-sepolicy"/>
-<remove-project name="device/google/cuttlefish_kernel"/>
-<remove-project name="device/google/vrservices"/>
-<remove-project name="device/linaro/bootloader/edk2"/>
-<remove-project name="device/linaro/bootloader/OpenPlatformPkg"/>
-<remove-project name="device/linaro/hikey"/>
-<remove-project name="device/linaro/hikey-kernel"/>
-<remove-project name="device/generic/goldfish-opengl"/>
-<remove-project name="device/generic/goldfish"/>
-<remove-project name="platform/hardware/qcom/msm8994"/>
-<remove-project name="platform/hardware/qcom/msm8996"/>
-<remove-project name="platform/hardware/qcom/msm8x26"/>
-<remove-project name="platform/hardware/qcom/msm8x27"/>
-<remove-project name="platform/hardware/qcom/msm8x84"/>
-<remove-project name="platform/hardware/qcom/msm8x09"/>
-<remove-project name="platform/hardware/qcom/power"/>
-<remove-project name="platform/packages/apps/Browser2"/>
-<remove-project name="platform/packages/apps/Gallery"/>
-<remove-project name="platform/packages/apps/Music"/>
-<remove-project name="platform/packages/apps/QuickSearchBox"/>
-<remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1"/>
-<remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9"/>
-<remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9"/>
-<remove-project name="platform/prebuilts/gdb/darwin-x86"/>
-<remove-project name="platform/prebuilts/go/darwin-x86"/>
-<remove-project name="platform/prebuilts/python/darwin-x86/2.7.5"/>
-<remove-project name="platform/packages/apps/Tag"/>
-<remove-project name="kernel/tests"/>
+<remote  name="github"
+           fetch="https://github.com" />
+<remote name="phh" fetch="https://github.com/phhusson/" />
+
+<remote name="gitlab" fetch="https://gitlab.org/" />
+
+ <remote  name="caf"
+           fetch="http://source.codeaurora.org/quic/la"
+           review="codeaurora.org" />
+
+  <remote name="LineageOS"
+          fetch="https://github.com/LineageOS/"
+          review="https://review.lineageos.org/"
+          revision="refs/heads/lineage-15.1" />
+
+  <remote name="pixel"
+          fetch="https://github.com/PixelExperience"
+          revision="oreo-mr1"
+          review="gerrit.pixelexperience.org" />
+
+<remote name="pe" fetch="https://gitlab.com/PixelExperience/"  />
+
+  <remote name="aosp-tissot"
+          fetch="https://github.com/aosp-tissot/"
+          revision="refs/heads/aosp-8.1" />
+
+  <remote name="tissot-gitlab"
+          fetch="https://gitlab.com/sooti"
+          revision="pie" />
+
+
+<remote name="opengappsold" fetch="http://github.com/opengapps/"  />
+<remove-project name="platform/bionic" />
+<project path="bionic" name="platform_bionic" remote="phh" revision="android-12.0.0_r3-phh" />
+
+<remove-project name="platform/system/linkerconfig" />
+<project path="system/linkerconfig" name="platform_system_linkerconfig" remote="phh" revision="android-12.0.0_r3-phh" />
+<project path="vendor/gapps-go" name="gapps-go" remote="phh" revision="master" />
+<project path="vendor/hardware_overlay" name="sooti/vendor_hardware_overlay" remote="github" revision="pie-rebase" />
+<project path="device/phh/treble" name="aosp-tissot/device_phh_treble" remote="github" revision="android-12.0" />
+<project path="vendor/vndk" name="vendor_vndk" remote="phh" revision="android-10.0" />
+<project path="vendor/vndk-tests" name="vendor_vndk-tests" remote="phh" revision="master" />
+<project path="vendor/interfaces" name="vendor_interfaces" remote="phh" revision="android-11.0" />
+<project path="vendor/magisk" name="phhusson/vendor_magisk" remote="github" revision="android-10.0" />
+
+<!-- exfat support -->
+<remote name="relan" fetch="https://github.com/relan/" />
+<project path="external/exfat" name="exfat" remote="relan" revision="master" />
+
+  <!-- Device repos -->
+  <remove-project name="device/generic/arm64" />
+  <remove-project name="device/generic/armv7-a-neon" />
+  <remove-project name="device/generic/car" />
+  <remove-project name="device/generic/mini-emulator-arm64" />
+  <remove-project name="device/generic/mini-emulator-armv7-a-neon" />
+  <remove-project name="device/generic/mini-emulator-x86" />
+  <remove-project name="device/generic/mini-emulator-x86_64" />
+  <remove-project name="device/generic/qemu" />
+  <remove-project name="device/generic/x86" />
+  <remove-project name="device/generic/x86_64" />
+  <remove-project name="device/generic/uml" />
+ <remove-project name="device/google/trout" />
+  <remove-project name="device/google/fuchsia" />
+  <remove-project name="device/google/contexthub" />
+  <remove-project name="device/google/atv" />
+  <remove-project name="device/generic/opengl-transport" />
+  <remove-project name="device/generic/trusty" />
+  <remove-project name="device/google/bonito-sepolicy" />
+  <remove-project name="device/google/vrservices" />
+
+  <remove-project name="device/linaro/hikey" />
+  <remove-project name="device/linaro/hikey-kernel" />
+  <remove-project name="device/generic/goldfish-opengl" />
+  <remove-project name="device/generic/goldfish" />
+  <remove-project name="platform/hardware/qcom/msm8994" />
+  <remove-project name="platform/hardware/qcom/msm8996" />
+  <remove-project name="platform/hardware/qcom/msm8x26" />
+  <remove-project name="platform/hardware/qcom/msm8x27" />
+  <remove-project name="platform/hardware/qcom/msm8x84" />
+  <remove-project name="platform/hardware/qcom/msm8x09" />
+  <remove-project name="platform/hardware/qcom/power" />
+
+  <remove-project name="platform/packages/apps/Browser2" />
+  <remove-project name="platform/packages/apps/Gallery" />
+  <remove-project name="platform/packages/apps/Music" />
+  <remove-project name="platform/packages/apps/QuickSearchBox" />
+
+
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gdb/darwin-x86" />
+  <remove-project name="platform/prebuilts/go/darwin-x86" />
+  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
+  <remove-project name="platform/packages/apps/Tag" />
+  <remove-project name="kernel/tests" />
 </manifest>
