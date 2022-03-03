@@ -1,19 +1,20 @@
 #!/bin/bash
 set -e
 threads="cat /proc/cpuinfo | grep processor | wc -l"
-repo_init="repo init -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r15 --depth=1"
-phh_patch="wget https://github.com/phhusson/treble_experimentations/releases/download/v400.b/patches.zip"
-sooti_patch="wget -O patch.zip https://github.com/aosp-tissot/local_manifest/raw/aosp-12.0/patches.zip"
+repo_init="repo init -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r32 --depth=1"
+phh_patch="wget -O patches.zip https://github.com/phhusson/treble_experimentations/releases/download/v402/patches-for-developers.zip"
+sooti_patch="wget https://github.com/aosp-tissot/local_manifest/raw/aosp-12.0/patches.zip"
 repo_sync="repo sync -c -j 16 -f --force-sync --no-tag --no-clone-bundle --optimized-fetch --prune"
 if [ "$1" == "new" ] || [ "$2" == "new" ];then
   $repo_init
   wget https://raw.githubusercontent.com/aosp-tissot/local_manifest/aosp-12.0/local_manifest.xml
+  mkdir .repo/local_manifests
   mv local_manifest.xml ./.repo/local_manifests/
   wget https://raw.githubusercontent.com/aosp-tissot/local_manifest/aosp-12.0/patch.sh
-  $phh_patch
+  $sooti_patch
   unzip ./patches.zip
   rm ./patches.zip
-  $sooti_patch
+  $phh_patch
   unzip ./patches.zip
   rm ./patches.zip
   $repo_sync
