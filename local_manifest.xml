@@ -32,14 +32,10 @@
 
 
 <remote name="opengappsold" fetch="http://github.com/opengapps/"  />
-<remove-project name="platform/bionic" />
-<project path="bionic" name="platform_bionic" remote="phh" revision="android-12.0.0_r3-phh" />
 
-<remove-project name="platform/system/linkerconfig" />
-<project path="system/linkerconfig" name="platform_system_linkerconfig" remote="phh" revision="android-12.0.0_r3-phh" />
 <project path="vendor/gapps-go" name="gapps-go" remote="phh" revision="master" />
 <project path="vendor/hardware_overlay" name="sooti/vendor_hardware_overlay" remote="github" revision="pie-rebase" />
-<project path="device/phh/treble" name="aosp-tissot/device_phh_treble" remote="github" revision="android-12.0" />
+<project path="device/phh/treble" name="aosp-tissot/device_phh_treble" remote="github" revision="android-12.1" />
 <project path="vendor/vndk" name="vendor_vndk" remote="phh" revision="android-10.0" />
 <project path="vendor/vndk-tests" name="vendor_vndk-tests" remote="phh" revision="master" />
 <project path="vendor/interfaces" name="vendor_interfaces" remote="phh" revision="android-11.0" />
@@ -50,7 +46,7 @@
 <project path="external/exfat" name="exfat" remote="relan" revision="master" />
 
   <!-- Device repos -->
-  <remove-project name="device/generic/arm64" />
+<!--  <remove-project name="device/generic/arm64" />
   <remove-project name="device/generic/armv7-a-neon" />
   <remove-project name="device/generic/car" />
   <remove-project name="device/generic/mini-emulator-arm64" />
@@ -62,12 +58,10 @@
   <remove-project name="device/generic/x86_64" />
   <remove-project name="device/generic/uml" />
  <remove-project name="device/google/trout" />
-  <remove-project name="device/google/fuchsia" />
   <remove-project name="device/google/contexthub" />
   <remove-project name="device/google/atv" />
   <remove-project name="device/generic/opengl-transport" />
   <remove-project name="device/generic/trusty" />
-  <remove-project name="device/google/bonito-sepolicy" />
   <remove-project name="device/google/vrservices" />
 
   <remove-project name="device/linaro/hikey" />
@@ -88,11 +82,6 @@
   <remove-project name="platform/packages/apps/QuickSearchBox" />
 
 
-  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
-  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
-  <remove-project name="platform/prebuilts/gdb/darwin-x86" />
-  <remove-project name="platform/prebuilts/go/darwin-x86" />
-  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
   <remove-project name="platform/packages/apps/Tag" />
-  <remove-project name="kernel/tests" />
+  <remove-project name="kernel/tests" /> -->
 </manifest>

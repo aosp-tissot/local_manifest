@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 threads="cat /proc/cpuinfo | grep processor | wc -l"
-repo_init="repo init -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r32 --depth=1"
-phh_patch="wget -O patches.zip https://github.com/phhusson/treble_experimentations/releases/download/v402/patches-for-developers.zip"
-sooti_patch="wget https://github.com/aosp-tissot/local_manifest/raw/aosp-12.0/patches.zip"
+repo_init="repo init -u https://android.googlesource.com/platform/manifest -b android-13.0.0_r3 --depth=1"
+# Disable for now phh_patch="wget -O patches.zip https://github.com/phhusson/treble_experimentations/releases/download/v415/patches-for-developers.zip"
+sooti_patch="wget https://github.com/aosp-tissot/local_manifest/raw/aosp-13.0/patches.zip"
 repo_sync="repo sync -c -j 16 -f --force-sync --no-tag --no-clone-bundle --optimized-fetch --prune"
 if [ "$1" == "new" ] || [ "$2" == "new" ];then
   $repo_init
@@ -14,9 +14,9 @@ if [ "$1" == "new" ] || [ "$2" == "new" ];then
   $sooti_patch
   unzip ./patches.zip
   rm ./patches.zip
-  $phh_patch
-  unzip ./patches.zip
-  rm ./patches.zip
+#  $phh_patch
+#  unzip ./patches.zip
+#  rm ./patches.zip
   $repo_sync
   bash patch.sh ./
 fi
@@ -29,9 +29,9 @@ if [ "$1" == "clean" ] || [ "$2" == "clean" ];then
   if [ -d "patches" ]; then
      rm -rf patches
   fi
-  $phh_patch
-  unzip ./patches.zip
-  rm ./patches.zip
+#  $phh_patch
+#  unzip ./patches.zip
+#  rm ./patches.zip
   $sooti_patch
   unzip ./patches.zip
   rm ./patches.zip
@@ -43,16 +43,16 @@ bash generate.sh
 cd -
 . build/envsetup.sh
 if [ "$1" == "arm64-gapps" ] || [ "$2" == "arm64-gapps" ];then
-   lunch treble_arm64_bgN-user
+   lunch treble_arm64_bgN-userdebug
 fi
 if [ "$1" == "arm64-gapps-go" ] || [ "$2" == "arm64-gapps-go" ];then
-   lunch treble_arm64_boN-user
+   lunch treble_arm64_boN-userdebug
 fi
 if [ "$1" == "arm32-gapps-go" ] || [ "$2" == "arm32-gapps-go" ];then
-   lunch treble_arm_aoN-user
+   lunch treble_arm_aoN-userdebug
 fi
 if [ "$1" == "arm64-vanilla" ] || [ "$2" == "arm64-vanilla" ];then
-   lunch treble_arm64_bvN-user
+   lunch treble_arm64_bvN-userdebug
 fi
 if [ "$1" == "clean" ];then
    make installclean RELAX_USES_LIBRARY_CHECK=true
